@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: denden-air-server
+    name: dendenair
     runtime: node
     plan: free
     buildCommand: npm install

@@ -1,0 +1,22 @@
+name: Keep Alive - Prevent Render Cold Start
+
+on:
+  schedule:
+    # Ping every 14 minutes to prevent Render's 15-minute sleep
+    - cron: '*/14 * * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render Server
+        run: |
+          echo "Pinging Denden Air server to prevent cold start..."
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://dendenair.onrender.com/api/v1/health || echo "000")
+          echo "Response code: $response"
+          if [ "$response" = "200" ]; then
+            echo "✅ Server is alive and healthy"
+          else
+            echo "⚠️ Server returned status $response (may be waking up)"
+          fi
