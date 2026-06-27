@@ -1,0 +1,7 @@
+{
+  "version_code": 7,
+  "version_name": "1.2.2",
+  "apk_url": "https://dendenair.pages.dev/dendenair-v7.apk",
+  "release_notes": "Added QR Code scanner for quick login. Fixed update loop issues. Added device delete option in dashboard.",
+  "force_update": true
+}

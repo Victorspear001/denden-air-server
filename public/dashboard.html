@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Denden Air — Real-time SMS & WhatsApp dashboard. Monitor incoming messages securely.">
+  <title>Denden Air — Dashboard</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌀</text></svg>">
+</head>
+<body>
+  <div class="bg-animated"></div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <div class="app-container">
+    <div class="dashboard" id="dashboard">
+
+      <!-- ═══ Header ═══ -->
+      <header class="header" id="header">
+        <div class="header-brand">
+          <div class="logo-icon">🌀</div>
+          <h1>Denden Air</h1>
+        </div>
+
+        <div class="header-right">
+          <div class="connection-status" id="connection-status">
+            <span class="status-dot" id="status-dot"></span>
+            <span id="status-text">Connecting…</span>
+          </div>
+
+          <div class="user-info" id="user-info">
+            <div class="user-avatar" id="user-avatar">?</div>
+            <span class="user-email" id="user-email">Loading…</span>
+          </div>
+
+          <button class="btn-logout" id="btn-logout">⏻ Logout</button>
+        </div>
+      </header>
+
+      <!-- ═══ Sidebar ═══ -->
+      <aside class="sidebar" id="sidebar">
+
+        <!-- Stats Section -->
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">📊 Live Statistics</h3>
+          <div class="stat-grid">
+            <div class="stat-item">
+              <span class="stat-label">Messages Today</span>
+              <span class="stat-value" id="stat-messages">0</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Active Devices</span>
+              <span class="stat-value" id="stat-devices">0</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Last Received</span>
+              <span class="stat-value" id="stat-last-time">—</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Devices Section -->
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">📱 Registered Devices</h3>
+          <div class="device-list" id="device-list">
+            <div class="empty-state">
+              <span class="empty-icon">📱</span>
+              No devices registered yet
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- ═══ Main Content ═══ -->
+      <main class="main-content" id="main-content">
+
+        <!-- Stats Bar -->
+        <div class="stats-bar" id="stats-bar">
+          <div class="stats-card glass-card-static cyan">
+            <p class="stats-label">Total Messages</p>
+            <p class="stats-value" id="total-messages">0</p>
+            <p class="stats-sub">All time</p>
+          </div>
+          <div class="stats-card glass-card-static purple">
+            <p class="stats-label">Unique Senders</p>
+            <p class="stats-value" id="unique-senders">0</p>
+            <p class="stats-sub">Distinct sources</p>
+          </div>
+          <div class="stats-card glass-card-static emerald">
+            <p class="stats-label">OTP Detected</p>
+            <p class="stats-value" id="otp-count">0</p>
+            <p class="stats-sub">Pattern matched</p>
+          </div>
+        </div>
+
+        <!-- Message Type Tabs -->
+        <div class="msg-tabs" id="msg-tabs">
+          <button class="msg-tab active" data-type="all" id="tab-all">
+            📨 All Messages
+          </button>
+          <button class="msg-tab" data-type="sms" id="tab-sms">
+            📱 SMS
+          </button>
+          <button class="msg-tab" data-type="whatsapp" id="tab-whatsapp">
+            💬 WhatsApp
+          </button>
+        </div>
+
+        <!-- Feed Header -->
+        <div class="feed-header">
+          <h2 class="feed-title">
+            <span id="feed-title-text">📨 All Messages</span>
+            <span class="feed-badge hidden" id="feed-badge">LIVE</span>
+          </h2>
+          <button class="btn-delete-all" id="btn-delete-all" title="Delete all messages in current tab">
+            🗑️ Delete All
+          </button>
+        </div>
+
+        <!-- SMS Feed -->
+        <div class="sms-feed" id="sms-feed">
+          <div class="empty-state" id="feed-empty">
+            <span class="empty-icon" style="font-size: 2.5rem;">📭</span>
+            <p class="mt-1" style="font-size: 0.95rem; color: var(--text-secondary);">No messages yet</p>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;">
+              Messages will appear here in real-time as they are received by your devices.
+            </p>
+          </div>
+        </div>
+
+      </main>
+
+    </div>
+  </div>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

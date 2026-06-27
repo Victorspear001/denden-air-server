@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Denden Air — Secure SMS & OTP tracking platform. Login or create your account.">
+  <title>Denden Air — Authentication</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌀</text></svg>">
+</head>
+<body>
+  <div class="bg-animated"></div>
+
+  <div class="auth-container">
+    <div class="auth-card glass-card" id="auth-card">
+
+      <!-- Logo -->
+      <div class="auth-logo">
+        <h1>🌀 Denden Air</h1>
+        <p class="subtitle">Secure SMS & OTP Tracking Platform</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="auth-tabs" id="auth-tabs">
+        <button class="auth-tab active" id="tab-login" data-mode="login">Sign In</button>
+        <button class="auth-tab" id="tab-register" data-mode="register">Create Account</button>
+      </div>
+
+      <!-- Alert Messages -->
+      <div class="alert alert-error" id="alert-error"></div>
+      <div class="alert alert-success" id="alert-success"></div>
+
+      <!-- Login Form -->
+      <form id="auth-form" autocomplete="on">
+        <div class="form-group">
+          <label class="form-label" for="input-email">Email Address</label>
+          <input
+            class="form-input"
+            type="email"
+            id="input-email"
+            name="email"
+            placeholder="you@example.com"
+            required
+            autocomplete="email"
+          >
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="input-password">Password</label>
+          <input
+            class="form-input"
+            type="password"
+            id="input-password"
+            name="password"
+            placeholder="Enter your password"
+            required
+            minlength="8"
+            autocomplete="current-password"
+          >
+        </div>
+
+        <!-- Confirm Password (Register only) -->
+        <div class="form-group hidden" id="confirm-group">
+          <label class="form-label" for="input-confirm">Confirm Password</label>
+          <input
+            class="form-input"
+            type="password"
+            id="input-confirm"
+            name="confirm"
+            placeholder="Confirm your password"
+            minlength="8"
+            autocomplete="new-password"
+          >
+        </div>
+
+        <button class="btn btn-primary" type="submit" id="btn-submit">
+          <span id="btn-text">Sign In</span>
+          <div class="spinner hidden" id="btn-spinner"></div>
+        </button>
+      </form>
+
+      <div style="margin-top: 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+        <p style="color: #a0a0b0; font-size: 14px; margin-bottom: 12px;">Need the companion app?</p>
+        <a href="/dendenair.apk" class="btn" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; text-decoration: none; padding: 10px 16px; border-radius: 8px; font-size: 14px; font-weight: bold; display: inline-flex; align-items: center; gap: 8px;" download>
+          <span>📱</span> Download Android APK
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/js/auth.js"></script>
+</body>
+</html>
