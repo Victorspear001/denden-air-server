@@ -1,7 +1,7 @@
 {
-  "version_code": 7,
-  "version_name": "1.2.2",
-  "apk_url": "https://github.com/Victorspear001/denden-air-server/releases/download/v1.2.2/dendenair-v7.apk",
+  "version_code": 8,
+  "version_name": "1.2.3",
+  "apk_url": "https://github.com/Victorspear001/denden-air-server/releases/download/v1.2.3/dendenair-v8.apk",
   "release_notes": "Added QR Code scanner for quick login. Fixed update loop issues. Added device delete option in dashboard.",
   "force_update": true
 }
